@@ -25,7 +25,4 @@ jobs:
       
       - name: Ls
         run: |
-          pip install -r requirements.txt
-          python /main.py
           ls
-          ls /blog
