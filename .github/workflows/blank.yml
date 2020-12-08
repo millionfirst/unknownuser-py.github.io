@@ -25,6 +25,7 @@ jobs:
       
       - name: Ls
         run: |
-          pip freeze
+          pip install -r /requirements.txt
+          python /main.py
           ls
           ls /blog
