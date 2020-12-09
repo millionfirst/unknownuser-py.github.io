@@ -26,3 +26,4 @@ jobs:
       - name: Ls
         run: |
           ls
+          ls blog
