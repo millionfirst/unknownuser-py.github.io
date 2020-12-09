@@ -1,4 +1,4 @@
-name: Pages
+name: Hello World action
 
 on:
   push:
@@ -16,16 +16,12 @@ jobs:
         with:
           python-version: 3.8
 
+      - name: Execute py script
+        uses: azureswastika/blog.py@v1
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-
-      - name: Execute py script
-        uses: azureswastika/blog.py@v1
-        
-      - name: Commit
-        uses: EndBug/add-and-commit@v5
-        with:
-          add: "*.html"
-        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip freeze
+          python main.py
