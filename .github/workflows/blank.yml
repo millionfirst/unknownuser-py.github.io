@@ -22,7 +22,7 @@ jobs:
 
       - name: Execute py script
         uses: azureswastika/blog.py@v1
-      
+        
       - name: Ls
         run: |
           ls
