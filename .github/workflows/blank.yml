@@ -1,0 +1,21 @@
+name: Node CI
+
+on: push
+
+jobs:
+  buildAndTest:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - uses: azureswastika/test-action@v1
+      with:
+        who-to-greet: 'Mona the Octocat'
