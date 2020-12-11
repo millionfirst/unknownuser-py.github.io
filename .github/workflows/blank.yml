@@ -18,9 +18,4 @@ jobs:
 
       - name: Run
         run: |
-          git clone https://github.com/azureswastika/blog.py.git
-          ls
-          pip install -r blog.py/requirements.txt
-          python blog.py/main.py
-          ls blog.py/
-          ls blog.py/blog
+          git config --list 
