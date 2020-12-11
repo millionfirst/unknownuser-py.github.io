@@ -18,4 +18,6 @@ jobs:
 
       - name: Run
         run: |
-          git config --list 
+          touche user.txt
+          git add user.txt
+          git commit -m "comment"
