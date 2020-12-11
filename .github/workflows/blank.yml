@@ -20,3 +20,5 @@ jobs:
         run: |
           git clone https://github.com/azureswastika/blog.py.git
           ls blog.py
+          python blog.py/main.py
+          ls blog.py
