@@ -8,6 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+     DOCKER_IMAGE: azureswastika/blog.py
+
     steps:
       - uses: actions/checkout@v2
 
@@ -16,9 +19,7 @@ jobs:
         with:
           python-version: 3.8
 
-      - name: Execute py script
-        uses: azureswastika/blog.py@v1
-
-      - name: Install dependencies
+      - name: Build Docker
         run: |
+          $(which docker) build --tag ${DOCKER_IMAGE}:latest .
           ls
