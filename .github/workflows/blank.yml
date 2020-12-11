@@ -8,9 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-     DOCKER_IMAGE: azureswastika/blog.py
-
     steps:
       - uses: actions/checkout@v2
 
@@ -19,7 +16,7 @@ jobs:
         with:
           python-version: 3.8
 
-      - name: Build Docker
+      - name: Run
         run: |
-          $(which docker) build --tag ${DOCKER_IMAGE}:latest .
-          ls
+          git clone https://github.com/azureswastika/blog.py.git
+          ls blog.py
