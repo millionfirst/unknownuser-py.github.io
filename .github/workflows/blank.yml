@@ -18,6 +18,6 @@ jobs:
 
       - name: Run
         run: |
-          touche user.txt
+          touch user.txt
           git add user.txt
           git commit -m "comment"
